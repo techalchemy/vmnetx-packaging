@@ -10,4 +10,4 @@
 #export DH_VERBOSE=1
 
 %:
-	dh $@ --with-autoreconf --with-python2
+	dh $@ --with autoreconf,python2
