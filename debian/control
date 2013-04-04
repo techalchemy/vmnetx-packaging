@@ -2,27 +2,21 @@ Source: vmnetx
 Section: devel
 Priority: extra
 Maintainer: Daniel Ryan <dfryan@andrew.cmu.edu>
-Build-Depends: debhelper (>= 8.0.0), curl (>= 7.22),
- libcurl4-gnutls-dev, fuse, libfuse-dev, libfuse2,
- python-fuse, libglib2.0-0, libglib2.0-dev,
-# libwww-curl-perl tclcurl, libcurl4-gnutls-dev
- pkg-config, autoconf (>= 2.6), automake (>= 1.11),
- libtool (>= 2.4.2)
-Standards-Version: 3.9.2
+Build-Depends: debhelper (>= 8.0.0), python, dh-autoreconf,
+ libcurl4-gnutls-dev, libfuse-dev, libglib2.0-dev,
+ pkg-config, autoconf, automake, libtool, libxml2-dev,
+ python-dev
+Standards-Version: 3.9.4
 Homepage: https://github.com/cmusatyalab/vmnetx
-#Vcs-Git: git://git.debian.org/collab-maint/vmnetx.git
-#Vcs-Browser: http://git.debian.org/?p=collab-maint/vmnetx.git;a=summary
+Vcs-Git: git://github.com/cmusatyalab/vmnetx.git
 
 Package: vmnetx
-Architecture: any
+Architecture: i386 amd64
 Depends: ${shlibs:Depends}, ${misc:Depends},
- qemu-kvm, python-gtk2 (>= 2.24), python-gtk2-dev (>= 2.24),
- python-gtk-vnc (>= 0.5.0), python-requests,
- python-dateutil (>= 1.5), libvirt0 (>= 0.9.8),
- libvirt-dev (>= 0.9.8), libvirt-bin (>= 0.9.8),
- python-libvirt (>= 0.9.8), libcurl3, python-lxml (>= 2.3),
- libfuse2, python-fuse, libcurl4-gnutls-dev, pkg-config,
- libglib2.0-0, libglib2.0-dev, python-selinux
+ ${python:Depends}, qemu-kvm, fuse | fuse-utils,
+ libvirt-bin, python-gtk2, python-gtk-vnc,
+ python-requests, python-dateutil, python-libvirt,
+ python-fuse, python-selinux, python-lxml
 Description: Virtual Machine Network Execution
  VMNetX allows KVM-based virtual machines to be stored on a
  web server and executed on-demand on a client system. The
@@ -30,9 +24,9 @@ Description: Virtual Machine Network Execution
  starting the VM; instead, disk and memory chunks are
  retrieved on demand from the web server and then cached on
  the client.
- . 
- VMNetX allows a user to quickly try out some software 
- without needing to install it. The software runs on their 
+ .
+ VMNetX allows a user to quickly try out some software
+ without needing to install it. The software runs on their
  own computer, so performance is better than a thin client.
  Unlike a traditional virtual machine image, the user does
  not need to download gigabytes of data before they can run

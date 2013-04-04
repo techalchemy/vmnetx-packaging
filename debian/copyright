@@ -1,6 +1,6 @@
 Format: http://dep.debian.net/deps/dep5
 Upstream-Name: vmnetx
-Source: https://github.com/cmusatyalab/vmnetx
+Source: https://github.com/cmusatyalab/vmnetx.git
 
 Files: *
 Copyright: 2006-2013 Carnegie Mellon University
@@ -22,7 +22,7 @@ License: GPL-2
  Public License version 2 can be found in "/usr/share/common-licenses/GPL-2".
 
 Files: debian/*
-Copyright: 2013 Daniel Ryan <dfryan@andrew.cmu.edu>
+Copyright: 2013 Carnegie Mellon University
 License: GPL-2
  This package is free software; you can redistribute it and/or modify
  it under the terms of the GNU General Public License as published by
